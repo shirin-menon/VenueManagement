@@ -1,0 +1,204 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+       
+    </asp:ContentPlaceHolder>
+   
+    <style type="text/css">
+   
+          
+       
+      
+        .auto-style23 {
+            color: #FFFFFF;
+            text-decoration:none;
+          
+
+        }
+        #sidebar{
+            height:305%;
+            left:-200px;
+            width:200px;
+            position:fixed;
+          
+            background-color:#151719;
+            
+        }
+        #sidebar ul li{
+            color:rgba(230,230,230,0.9);
+            list-style:none;
+            padding:15px 10px;
+            border-bottom:1px solid rgba(100,100,100,0.3);
+        }
+   #sidebar ul li.imagebord{
+       border-bottom:none;
+   }
+        .auto-style24 {
+            height: 670px;
+            width: 1226px;
+        }
+               
+        .auto-style25 {
+            margin-left: 0px;
+            margin-right: 39px;
+        }
+      #sidebar.active{
+          left:0px;
+      }         
+        .auto-style26 {
+            right: 1274px;
+            margin-top:-8px;
+        }
+        .auto-style27 {
+            width: 1216px;
+            height: 18px;
+            margin-left:246px;
+            margin-right:380px;
+            position:fixed;
+              top: 69px;
+            margin-top:11px;
+            left: -233px;
+        }
+        .auto-style28 {
+            height: 65px;
+            margin-top:-10px;
+            width: 1462px;
+            margin-left:200px;
+        }
+        .auto-style30 {
+            height: 157px;
+            margin-top: 21px;
+            color: #FFFFFF;
+            text-align: left;
+            background-color: #151719;
+            width: 1500px;
+            margin-left: -7px;
+            margin-right: 0px;
+        }
+        .auto-style32 {
+            height: 62px;
+        }
+        .auto-style33 {
+            font-family: "Malgun Gothic";
+          
+        }
+        .auto-style34 {
+            margin-left: 15px;
+         
+            left: 567px;
+            top: 575px;
+            }
+        .auto-style35 {
+            margin-left: 0px;
+        }
+        .auto-style36 {
+            font-family: "Ink Free";
+        }
+        .auto-style37 {
+            font-family: "Freestyle Script";
+            font-weight: bold;
+            color: #990099;
+            font-size:xx-large;
+        }
+        .auto-style38 {
+            margin-left: 10px;
+            margin-top: -10px;
+        }
+        #sidebar .bookchild {
+            position:absolute;
+            display:none;
+            margin-left: 85px;
+            width: 140px;
+               background-color:#151719;
+        } 
+        #sidebar ul li:hover > ul
+            {
+            display:block;
+        }
+       
+        </style>
+   <script>
+       function sidemenu() {
+           document.getElementById('sidebar').classList.toggle('active');
+           return false;
+
+       }
+
+   </script>
+</head>
+<body style="height: 5px; width: 1226px;">
+    <form id="form1" runat="server" class="auto-style24" >
+  
+       
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            <div class="auto-style32">
+                <div id="sidebar" class="auto-style26"  >
+                    <div class="auto-style28" style="background-position: -791px 307px; background-image: url('/image/white-polygon.jpg')">
+                        <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/image/menu-512.png" CssClass="auto-style25" Height="60px" Width="73px" OnClientClick=" return sidemenu()"/>
+                        <span class="auto-style37">BookIt</span><br />
+                    </div>
+                    <ul>
+                        <li class="imagebord" style="width: 76px; margin-top: 11px; height: 36px; margin-left: 3px; margin-right: 0px;">
+                            <asp:Image ID="Image1" runat="server" ImageUrl="~/image/BigRocket-1-01-512.png" CssClass="auto-style38" Height="53px" Width="63px" />
+                        </li>
+                        <li><strong>
+                            <asp:Label ID="Label1" runat="server" Text="Hello, Guest" CssClass="auto-style23"></asp:Label>
+                            </strong></li>
+                        <li ><strong>
+                            <asp:HyperLink ID="HyperLink7" runat="server" CssClass="auto-style23"><a href="client_log.aspx" class="auto-style23" >Login / Sign Up </a></asp:HyperLink>
+                            </strong></li>
+                        <li ><strong>
+                            <asp:HyperLink ID="HyperLink1" runat="server" CssClass="auto-style23"><a href="Homie.aspx" class="auto-style23">Home</a></asp:HyperLink>
+                            </strong></li>
+                        <li ><strong>
+                            <asp:HyperLink ID="HyperLink2" runat="server" CssClass="auto-style23"><a href="cnt.aspx" class="auto-style23">Contact Us</a></asp:HyperLink>
+                            </strong></li>
+                        <li ><strong>
+                            <asp:HyperLink ID="HyperLink3" runat="server" CssClass="auto-style23"><a href="about.aspx" class="auto-style23">About Us</a></asp:HyperLink>
+                            </strong></li>
+                        <li >
+                            <asp:HyperLink ID="HyperLink4" runat="server" CssClass="auto-style23">Event Booking</asp:HyperLink>
+                            <ul class="bookchild">
+                  
+                                <li>
+                                    <asp:HyperLink ID="HyperLink10" runat="server" CssClass="auto-style23"><a href="popvenue.aspx" class="auto-style23"> Popular Venues</a></asp:HyperLink>
+                                </li>
+                                <li>
+                                    <asp:HyperLink ID="HyperLink11" runat="server" CssClass="auto-style23"><a href="ventour.aspx" class="auto-style23">Venue tour booking</a></asp:HyperLink>
+                                </li>
+                            </ul>
+                        </li>
+                        <li ><strong>
+                            <asp:HyperLink ID="HyperLink5" runat="server" CssClass="auto-style23" ><a href="corp.aspx" class="auto-style23"> corporates  </a></asp:HyperLink>
+                          </strong></li>
+                        
+                        <li ><strong>
+                            <asp:HyperLink ID="HyperLink6" runat="server" CssClass="auto-style23">Help</asp:HyperLink>
+                            </strong></li>
+                    </ul>
+                </div>
+            </div>
+                    </asp:ContentPlaceHolder>
+                   
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                             <div class="auto-style27">  </div>
+                        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+                            <div class="auto-style30" style="background-image: none; background-position: center">
+                                <strong><em><span class="auto-style33">
+                                <br /></span></em><span class="auto-style36">FOLLOW US AT:</span><span class="auto-style33"><em><br />
+                                <br />
+                                <asp:ImageButton ID="ImageButton2" runat="server" CssClass="auto-style35" Height="54px" ImageUrl="~/image/fb.png" Width="89px" />
+                                <br /></em></span>
+                                <asp:ImageButton ID="ImageButton3" runat="server" CssClass="auto-style34" ImageUrl="~/image/insta (1).png" Height="36px" Width="63px" />
+                                </strong>
+                            </div>
+                        </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>
